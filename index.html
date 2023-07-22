@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<!-- //<script src="./script.js">
+</script> -->
+
+<body>
+    <h1>One-line Calculator</h1>
+    <input type="text" placeholder="Entre a number" id="num1">
+    <p id="result"> </p>
+    <p id="operation"></p>
+
+
+    <button onclick="add()" id="button"> ADD </button>
+    <button onclick="sub()" id="button"> SUB </button>
+    <button onclick="mul()" id="button"> MUL </button>
+
+    <button onclick="div()" id="button"> DIV </button>
+
+    <button onclick="equals()" id="button2">Equals</button>
+    <button onclick="window/location.reload()" id="button2">Reload</button>
+
+
+</body>
+<style>
+    body {
+        background-color: rgb(78, 77, 77);
+    }
+
+    #button {
+        background-color: greenyellow;
+        color: black;
+        width: 200px;
+        height: 50px;
+        background-color: white;
+
+        margin-left: 12%;
+        margin-top: 10px;
+    }
+
+    #button2 {
+
+        text-align: center;
+        width: 200px;
+        height: 40px;
+
+        margin: auto;
+        margin-top: 70px;
+        margin-left: 45%;
+    }
+
+    #num1 {
+        text-align: center;
+        margin-left: 45%;
+        margin-top: 10%;
+        width: 200px;
+        height: 50px;
+
+    }
+
+
+    #operation {
+        text-align: center;
+        color: rgb(5, 5, 5);
+        border: 2px solid black;
+        width: 200px;
+        height: 50px;
+        margin-left: 45%;
+        background-color: white;
+
+    }
+
+    #result {
+        text-align: center;
+        border: 2px solid black;
+        width: 200px;
+        height: 50px;
+        margin-left: 45%;
+        background-color: white;
+
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 4%;
+        color: white;
+    }
+</style>
+<script>
+    data_global = "";
+    data_initiate = parseInt("0");
+
+    function add() {
+        if (data_global == "") {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            data1 = document.getElementById("num1").value;
+            d1 = parseInt(data1);
+
+            data_initiate += d1;
+        } else {
+            data_global += "+" + document.getElementById("num1").value;
+
+            //---------------------------------//
+            data1 = document.getElementById("num1").value;
+            d1 = parseInt(data1);
+
+            data_initiate += d1;
+        }
+    }
+
+    function sub() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate -= d1;
+        }
+        else {
+            data_global += "-" + document.getElementById("num1").value;
+
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate -= d1;
+        }
+    }
+    function mul() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate *= d1;
+        } else {
+
+            data_global += "*" + document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate *= d1;
+        }
+    }
+    function div() {
+        if (data_global.length == 0) {
+            data_global += document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate /= d1;
+        } else {
+            data_global += "/" + document.getElementById("num1").value;
+            //---------------------------------//
+            d1 = parseInt(document.getElementById("num1").value);
+            data_initiate /= d1;
+        }
+    }
+    function equals() {
+        document.getElementById("operation").innerHTML = data_global;
+        document.getElementById("result").innerHTML = data_initiate;
+    }
+</script>
+
+
+
+</html>
