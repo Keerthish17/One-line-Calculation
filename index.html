@@ -12,6 +12,7 @@
 
 <body>
     <h1>Calculator</h1>
+    <div id="bg">
     <input type="text" placeholder="Entre a number" id="num1">
     <p id="result"> </p>
     <p id="operation"></p>
@@ -24,11 +25,12 @@
     <button onclick="div()" id="button"> DIV </button>
 
     <button onclick="equals()" id="button2">Equals</button>
-    <button onclick="window/location.reload()" id="button2">AC</button>
-
+    <button onclick="window/location.reload()" id="button2">Reload</button>
+</div>
 
 </body>
 <style>
+    
     body {
         background-color: rgb(78, 77, 77);
         background-image: url(bg.jpg);
@@ -43,12 +45,12 @@
 
         margin-left: 12%;
         margin-top: 10px;
-        background-color: rgb(50, 47, 47);
+        background-color: rgb(170, 79, 79);
         color: white;
     }
 
     #button2 {
-        background-color: rgb(50, 47, 47);
+        background-color: rgb(170, 79, 79);
         color: white;
         text-align: center;
         width: 200px;
@@ -60,7 +62,7 @@
     }
 
     #num1 {
-        background-color: rgb(50, 47, 47);
+        background-color: rgb(170, 79, 79);
         color: white;
         border-radius: 2px;
         text-align: center;
@@ -73,7 +75,7 @@
 
 
     #operation {
-        background-color: rgb(50, 47, 47);
+        background-color: rgb(170, 79, 79);
         color: white;
         text-align: center;
         
@@ -85,7 +87,8 @@
 
     }
 
-    #result {background-color: rgb(50, 47, 47);
+    #result {
+        background-color: rgb(170, 79, 79);
         color: white;
         text-align: center;
         border: 2px solid black;
@@ -102,6 +105,9 @@
         margin-top: 2%;
         color: rgb(177, 23, 23);
     }
+::placeholder{
+    color: white;
+}
 </style>
 <script>
     data_global = "";
